@@ -1,6 +1,6 @@
 {
   "name": "proskomma-render-json",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A renderer for producing JSON, based on Proskomma Render",
   "main": "dist/index.js",
   "directories": {
@@ -26,7 +26,7 @@
   "homepage": "https://github.com/Proskomma/proskomma-render-json#readme",
   "dependencies": {
     "@babel/core": "^7.17.10",
-    "proskomma-render": "^0.6.0"
+    "proskomma-render": "^0.6.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",

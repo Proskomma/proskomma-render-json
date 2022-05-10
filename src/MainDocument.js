@@ -22,7 +22,8 @@ export default class MainDocument extends ScriptureParaDocument {
                 };
                 renderer.docSetModel.appData.currentBookCode = context.document.headers.bookCode;
                 renderer.docSetModel.appData.currentDocumentId = context.document.id;
-            }
+            },
+            true,
         );
         this.addAction(
             'endDocument',
@@ -37,7 +38,8 @@ export default class MainDocument extends ScriptureParaDocument {
                     .sequences).filter(kv => kv[1].type === 'main')[0][0];
                 renderer.docSetModel.appData.currentBookCode = null;
                 renderer.docSetModel.appData.currentDocumentId = null;
-            }
+            },
+            true,
         );
         this.addAction(
             'startSequence',
@@ -69,7 +71,8 @@ export default class MainDocument extends ScriptureParaDocument {
                 renderer.inSelectedSequence =
                     (!renderer.config.selectedSequenceId && context.sequenceStack[0].type === 'main') ||
                     (renderer.config.selectedSequenceId === context.sequenceStack[0].id);
-            }
+            },
+            true,
         );
         this.addAction(
             'endSequence',
@@ -77,21 +80,24 @@ export default class MainDocument extends ScriptureParaDocument {
             (renderer, context) => {
                 renderer.docSetModel.appData.currentSequence = null;
                 renderer.inSelectedSequence = false;
-            }
+            },
+            true,
         );
         this.addAction(
             'blockGraft',
             () => true,
             (renderer, context, data) => {
                 renderer.renderSequenceId(data.payload);
-            }
+            },
+            true,
         );
         this.addAction(
             'inlineGraft',
             () => true,
             (renderer, context, data) => {
                 renderer.renderSequenceId(data.payload);
-            }
+            },
+            true,
         );
     };
 }

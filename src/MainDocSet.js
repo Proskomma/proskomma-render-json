@@ -21,6 +21,7 @@ export default class MainDocSet extends ScriptureDocSet {
                 };
                 renderer.appData.currentDocSetId = renderer.context.docSet.id;
             },
+            true,
         )
         this.addAction(
             'endDocSet',
@@ -28,6 +29,7 @@ export default class MainDocSet extends ScriptureDocSet {
             renderer => {
                 renderer.appData.currentDocSet = null;
             },
+            true,
         )
     }
 
