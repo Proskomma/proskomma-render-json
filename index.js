@@ -23,4 +23,8 @@ const doRender = async (pk, config, docSetIds, documentIds) => {
     return thenFunction(result);
 };
 
-export {doRender}
+export {
+    doRender,
+    MainDocSet as JsonMainDocSet,
+    MainDocument as JsonMainDocument,
+}
