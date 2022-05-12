@@ -44,7 +44,7 @@ export default class MainDocument extends ScriptureParaDocument {
         this.addAction(
             'startSequence',
             () => true,
-            (renderer, context) => {
+            (renderer, context, data) => {
                 renderer.inSelectedSequence =
                     (!renderer.config.selectedSequenceId && context.sequenceStack[0].type === 'main') ||
                     (renderer.config.selectedSequenceId === context.sequenceStack[0].id);
@@ -55,7 +55,7 @@ export default class MainDocument extends ScriptureParaDocument {
                     {
                         type: context.sequenceStack[0].type,
                         nBlocks: context.sequenceStack[0].nBlocks,
-                        firstBlockScope: context.sequences[context.sequenceStack[0].id].blocks[0].blockScope,
+                        firstBlockScope: data.blocks[0].bs.payload.split('/')[1] || data.blocks[0].bs.payload,
                         previewText:
                             context.sequences[context.sequenceStack[0].id]
                                 .blocks[0]
