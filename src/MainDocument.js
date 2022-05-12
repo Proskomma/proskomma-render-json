@@ -55,13 +55,13 @@ export default class MainDocument extends ScriptureParaDocument {
                     {
                         type: context.sequenceStack[0].type,
                         nBlocks: context.sequenceStack[0].nBlocks,
-                        initialText:
+                        firstBlockScope: context.sequences[context.sequenceStack[0].id].blocks[0].blockScope,
+                        previewText:
                             context.sequences[context.sequenceStack[0].id]
                                 .blocks[0]
                                 .items
                                 .filter(i => i.type === 'token')
                                 .map(i => ['wordLike', 'punctuation'].includes(i.subType) ? i.payload : ' ')
-                                .slice(0, 25)
                                 .join('')
                                 .replace(/ +/g, ' ')
                                 .trim(),
