@@ -51,7 +51,6 @@ export default class MainDocument extends ScriptureParaDocument {
                 const document = renderer.config.output
                     .docSets[renderer.docSetModel.appData.currentDocSetId]
                     .documents[context.document.headers.bookCode];
-                console.log(data.blocks[0]);
                 document.sequences[context.sequenceStack[0].id] =
                     {
                         type: context.sequenceStack[0].type,

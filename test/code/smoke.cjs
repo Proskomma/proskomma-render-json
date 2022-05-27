@@ -27,7 +27,7 @@ test(
           [],
           [],
           );
-      console.log(JSON.stringify(config2, null, 2));
+      // console.log(JSON.stringify(config2, null, 2));
       t.ok(true);
     } catch (err) {
       console.log(err);

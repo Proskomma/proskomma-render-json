@@ -1,6 +1,6 @@
 {
   "name": "proskomma-render-json",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A renderer for producing JSON, based on Proskomma Render",
   "main": "dist/index.js",
   "directories": {
