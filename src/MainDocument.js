@@ -51,20 +51,13 @@ export default class MainDocument extends ScriptureParaDocument {
                 const document = renderer.config.output
                     .docSets[renderer.docSetModel.appData.currentDocSetId]
                     .documents[context.document.headers.bookCode];
+                console.log(data.blocks[0]);
                 document.sequences[context.sequenceStack[0].id] =
                     {
                         type: context.sequenceStack[0].type,
                         nBlocks: context.sequenceStack[0].nBlocks,
-                        firstBlockScope: data.blocks[0].bs.payload.split('/')[1] || data.blocks[0].bs.payload,
-                        previewText:
-                            context.sequences[context.sequenceStack[0].id]
-                                .blocks[0]
-                                .items
-                                .filter(i => i.type === 'token')
-                                .map(i => ['wordLike', 'punctuation'].includes(i.subType) ? i.payload : ' ')
-                                .join('')
-                                .replace(/ +/g, ' ')
-                                .trim(),
+                        firstBlockScope: "",
+                        previewText: "",
                         selected: renderer.inSelectedSequence,
                     };
                 renderer.docSetModel.appData.currentSequence = context.sequenceStack[0].id;
